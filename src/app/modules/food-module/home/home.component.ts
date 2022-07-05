@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import FoodCategories, { FoodAPIService } from 'src/app/services/food-api.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  foodReciptsApiData: any;
 
-  constructor() { }
-
+  constructor(private _foodApiService:FoodAPIService) { }
+   
   ngOnInit(): void {
+    this._foodApiService.getRecipiesByCategory(FoodCategories.Pizza).subscribe(response =>{
+      this.foodReciptsApiData = response.recipes;
+      console.log(this.foodReciptsApiData);    
+    })
   }
 
 }
