@@ -1,1 +1,28 @@
-<p>foodcard works!</p>
+<div class="container">
+  <div class="card" style="width: 18rem">
+    <img [src]="foodRecipe.image_url" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{foodRecipe.title}}</h5>
+      <p class="card-text">
+        {{foodRecipe.publisher}}
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <!-- <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '350px'}" styleClass="p-card-shadow card ">
+    <ng-template pTemplate="header">
+      <img [src]="foodRecipe.image_url" class="card-img-top w-100" alt="..." />
+    </ng-template>
+    <h5 class="card-title">{{foodRecipe.title}}</h5>
+    <p class="card-text">
+      {{foodRecipe.publisher}}
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button label="Save" icon="pi pi-check"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+    </ng-template>
+</p-card> -->
+</div>
+
+
+

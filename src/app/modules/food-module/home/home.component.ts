@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe } from 'src/app/interfaces/food-category';
 import FoodCategories, { FoodAPIService } from 'src/app/services/food-api.service';
+import {TabViewModule} from 'primeng/tabview';
+
 
 @Component({
   selector: 'app-home',
@@ -7,12 +10,12 @@ import FoodCategories, { FoodAPIService } from 'src/app/services/food-api.servic
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  foodReciptsApiData: any;
+  foodReciptsApiData: Recipe[] = [];
 
   constructor(private _foodApiService:FoodAPIService) { }
    
   ngOnInit(): void {
-    this._foodApiService.getRecipiesByCategory(FoodCategories.Pizza).subscribe(response =>{
+    this._foodApiService.getRecipiesByCategory(FoodCategories.Beef).subscribe(response =>{
       this.foodReciptsApiData = response.recipes;
       console.log(this.foodReciptsApiData);    
     })
